@@ -19,7 +19,8 @@ async def server_error(request, exc):
     return HTMLResponse(content="Uh Oh, thats not supposed to happen...", status_code=exc.status_code)
 
 if __name__ == '__main__':
-    path.mkdir("cache/")
+    if not os.path.exists('cache/'):
+        os.mkdir("cache/")
     print("Habbo Imaging Server")
     print("Created by The General")
     print("This software is free to use and modify. Please make changes publicly available.")

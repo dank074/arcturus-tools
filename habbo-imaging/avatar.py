@@ -326,6 +326,7 @@ class AvatarDataLoader():
     def load(self):
 
         def __load_figure_map():
+            print("Loading Figure Map")
             figure_map_xml = xml.etree.ElementTree.parse(XML_FOLDER + FIGURE_MAP).getroot()
             for lib in figure_map_xml.findall('lib'):
                 id: str = lib.get('id')
@@ -338,6 +339,7 @@ class AvatarDataLoader():
                     self.__figure_map[part_id] = id
 
         def __load_figure_data():
+            print("Loading Figure Data")
             figure_data_xml = xml.etree.ElementTree.parse(XML_FOLDER + FIGURE_DATA).getroot()
             for palette in figure_data_xml.findall('colors/palette'):
                 id: int = int(palette.get('id'))
@@ -374,6 +376,7 @@ class AvatarDataLoader():
                 self.__figure_data[set_type.type] = set_type
 
         def __load_asset_offset_map() -> None:
+            print("Loading Asset Data")
             for f in os.listdir("./" + ASSET_FOLDER):
                 path = os.path.join("./" + ASSET_FOLDER, f)
                 if os.path.isfile(path) and f.endswith(".bin"):
@@ -396,6 +399,8 @@ class AvatarDataLoader():
         __load_figure_map()
         __load_figure_data()
         __load_asset_offset_map()
+
+        print("Finished Loading Avatar Data")
 
     @property
     def figure_data(self):

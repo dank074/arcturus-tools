@@ -184,9 +184,9 @@ def from_string(badge_string:str, data_loader:GuildBadgeDataLoader):
             color = int(part[4:6])
             pos = int(part[6])
 
-            if type == BadgePartTypes.BASE:
+            if type == BadgePartTypes.BASE.value:
                 badge.set_base(data_loader.get_base(id), data_loader.get_base_color(color), pos)
-            elif type == BadgePartTypes.SYMBOL:
+            elif type == BadgePartTypes.SYMBOL.value:
                 badge.add_symbol(data_loader.get_symbol(id), data_loader.get_symbol_color(color), pos)
 
     return badge
