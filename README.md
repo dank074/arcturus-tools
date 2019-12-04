@@ -15,7 +15,7 @@ yourhost:8000/habbo-imaging/avatar?figure=lg-275-78.ch-3110-65-62.fa-1211-62.hr-
 
 ## Updating resources
 If you want to add more custom clothing or effects use the following program:
-https://github.com/dank074/SpriteExtractor/releases/tag/1.0
+https://github.com/dank074/SpriteExtractor/releases
 
 Then copy the output of the program to the resources directory as follows:
 
