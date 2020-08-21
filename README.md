@@ -2,7 +2,19 @@
 Habbo imager for generating badge and avatar images. All credit to Wesley
 
 ## Installation
-Just click the executable to run, it will start a server on port 8000.
+
+Install depenencies:
+```
+pip install uvicorn
+```
+```
+pip install starlette
+```
+
+Start up the server:
+```
+python server.py
+```
 
 ## Usage
 Example usage:
