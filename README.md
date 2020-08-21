@@ -3,7 +3,7 @@ Habbo imager for generating badge and avatar images. All credit to Wesley
 
 ## Installation
 
-Install depenencies:
+Install dependencies:
 ```
 pip install uvicorn
 ```
