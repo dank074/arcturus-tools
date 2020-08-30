@@ -104,9 +104,9 @@ class Sizes(Enum):
     def from_key(key: str) -> Size:
         for size in Sizes:
             if isinstance(size.value, Size) and size.value.key == key:
-                return size
+                return size.value
 
-        return Sizes.NORMAL
+        return Sizes.NORMAL.value
 
 class BodyLocation(Enum):
 

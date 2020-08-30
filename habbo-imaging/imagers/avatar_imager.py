@@ -8,9 +8,9 @@ import io
 
 class Avatar(object):
 
-    def __init__(self, figure: str, size : Size = Sizes.NORMAL, direction: int = 2, head_direction: int = 2, head_only: bool = False, actions:[Action]= [Actions.STAND], gesture:Gestures=Gestures.STANDARD, frame:int = 0, carry_data: int = 0):
+    def __init__(self, figure: str, size : Size = Sizes.NORMAL.value, direction: int = 2, head_direction: int = 2, head_only: bool = False, actions:[Action]= [Actions.STAND], gesture:Gestures=Gestures.STANDARD, frame:int = 0, carry_data: int = 0):
         self.__figure: str = figure
-        self.__size: Sizes = size
+        self.__size: Size = size
         self.__direction: int = direction
         self.__head_direction: int = head_direction
         self.__head_only: bool = head_only
@@ -52,7 +52,7 @@ class Avatar(object):
             illegal: bool = False
             if len(verified_actions) != 0:
                 for a in verified_actions:
-                    illegal = action.illegal_combination(a)
+                    illegal = action.illegal_combination(action, a)
                     if illegal: break
 
             if not illegal:
@@ -69,7 +69,7 @@ class Avatar(object):
             # Generate a blank transparent canvas
             size = (self.__size.size[0], self.__size.size[1])
             if self.__head_only:
-                if self.__size == Sizes.SMALL:
+                if self.__size == Sizes.SMALL.value:
                     size = (30, 27)
                 else:
                     size = (62, 52)
