@@ -10,6 +10,9 @@ pip install uvicorn
 ```
 pip install starlette
 ```
+```
+pip install matplotlib
+```
 
 Start up the server:
 ```
